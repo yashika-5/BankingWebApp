@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+}
+.left{
+   
+    margin-top: 5%;
+}
+.mid{
+    margin-top: 3%;
+}
+.right{
+    
+    margin-top: 3%;
+    width: 25%;
+}
+.display{
+    text-align: center;
+    font-weight: lighter;
+}
+.addUser{
+    margin-top: 25%;
+    margin-left: 5%;
+   
+   
+}
+
