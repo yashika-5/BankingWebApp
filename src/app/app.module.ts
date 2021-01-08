@@ -10,6 +10,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { UsersComponent } from './users/users.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { TransactionComponent } from './transaction/transaction.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +19,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavBarComponent,
     HomeComponent,
     UsersComponent,
-    AddUserComponent
+    AddUserComponent,
+    TransactionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]
