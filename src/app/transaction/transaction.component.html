@@ -1,1 +1,65 @@
-<p>transaction works!</p>
+<div class="container" style="display: flex;">
+<div class="col-lg-6" style="margin-top: 10%;">
+    <img src="/assets/money.jpg" style="width: 80%;height: 60%;">
+</div>
+
+<form [formGroup]='moneyForm' class="col-lg-6" (ngSubmit)="transferMoney()">
+    <div style="background-color: skyblue;margin-bottom: 5%;margin-right: 40%;text-align: center;color: white;">
+    <h2 style="margin-top: 15%;">Transfer Money</h2>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-7">
+        <label for="customerId">CustomerId</label>
+                    <div style="border: 5px black;">                      
+                            <b><p class="solid">{{senderId}}</p></b>
+                    </div>
+                </div>
+      </div>
+      <div class="form-row">
+      <div class="form-group col-md-7">
+        <label for="receiverName">Receiver's Name</label>
+                    <div>
+                        <select  formControlName="receiverName"  class="form-control">
+                            <option disabled>Select Receiver Name</option>          
+                            <option *ngFor="let cust of receiversList" >{{cust.customerName}}</option>
+                        </select>
+                    </div>
+      </div>
+      </div>
+    <div class="form-row">
+    <div class="form-group col-md-7">
+        <label for="accountNo">Account Number</label>
+        <div>
+            <input class="form-control"   type="number" name="accountNo" 
+                formControlName="accountNo" id="accountNo" >         
+                
+        </div>
+    </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="currentBalance">Current Balance (<b>Rs</b>)</label>
+                    <div  style="border: green 2px;">
+                        <input class="form-control"
+                           type="number" name="currentBalance" required
+                           id="currentBalance" [value]="senderData?.currentBalance">
+                    </div>
+                    
+      </div>
+   
+      <div class="form-group col-md-3">
+        <label for="amount">Amount</label>
+                    <div >
+                        <input  #amount class="form-control"  type="number" name="amount" required
+                            formControlName="amount" id="amount">
+                    </div>
+      </div>
+    </div>
+      <div class="form-group col-md-2">
+        <div class="form-row text-center ">
+            <button type="submit" class="btn btn-primary" [disabled]="moneyForm.invalid">Pay</button>
+        </div>
+      </div>
+      
+</form>
+   </div>

@@ -12,6 +12,8 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TransactionComponent } from './transaction/transaction.component';
+import { TransactionSuccessfulComponent } from './transaction-successful/transaction-successful.component';
+import { TransactionListComponent } from './transaction-list/transaction-list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { TransactionComponent } from './transaction/transaction.component';
     HomeComponent,
     UsersComponent,
     AddUserComponent,
-    TransactionComponent
+    TransactionComponent,
+    TransactionSuccessfulComponent,
+    TransactionListComponent
   ],
   imports: [
     BrowserModule,

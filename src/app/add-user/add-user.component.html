@@ -3,13 +3,15 @@
     <div class="row">
         <div class="col-lg-12">
             <form [formGroup]='addCustomer' (ngSubmit)="addCust()">
-                <h2 style="margin-left: 23%;">Add New Customer</h2>
+                <div style="background-color: skyblue;margin-bottom: 5%;margin-right: 22%;text-align: center;color: white;">
+                    <h2 >Add Customer</h2>
+                    </div>
               
                 <div style="display :flex; ">
                 <div class="form-group from-row col-lg-6">
                     <label class= "col-lg-6" for="customerName">Customer Name</label>
                     <div class= "col-lg-6 box ">
-                        <input class="form-control" type="text" name="customerName" required
+                        <input c                                                                                                                                                                                                                                                                                                                                                                                                                                                               lass="form-control" type="text" name="customerName" required
                             formControlName="customerName" id="customerName">
                     </div>
                 </div>

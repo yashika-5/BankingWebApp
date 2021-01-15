@@ -1,15 +1,20 @@
-<div  class="card" style="width: 18rem;display: flex;">
-  <div  *ngFor="let cust of customers">
-  <li><mat-icon style="font-size: 200px;">supervisor_account</mat-icon></li>
- 
-      <li class="list-group-item"><b>Customer Name : </b>{{cust.customerName}}</li>
-      <li class="list-group-item"><b>Email Id : </b>{{cust.email}}</li>
-      <li class="list-group-item"><b>Account No. : </b>{{cust.accountNo}}</li>
-      <li class="list-group-item"><b>Current Balance : </b>{{cust.currentBalance}}</li>
-  
+<div  class="card" style="width: 18rem;display: flex; flex-wrap: wrap;">
+  <div class="user"  *ngFor="let cust of customers">
+  <span><mat-icon style="font-size: 200px;">supervisor_account</mat-icon></span>
+      <span class="list-group-item"><b>Customer Id : </b>{{cust.customerId}}</span>
+      <span class="list-group-item"><b>Customer Name : </b>{{cust.customerName}}</span>
+      <span class="list-group-item"><b>Email Id : </b>{{cust.email}}</span>
+      <span class="list-group-item"><b>Account No. : </b>{{cust.accountNo}}</span>
+      <span class="list-group-item"><b>Current Balance : </b>{{cust.currentBalance}}</span>
+  <span>
+      <a [routerLink]="['/transaction',cust.customerId]" class="card-link" style="color: black;">
     <div class="card-body" style="background-color: skyblue;">
-      <a href="#" class="card-link" style="color: black;">Money Transaction</a>
+     Make Transaction
     </div>
+  </a>
+</span>
+  
   </div>
   </div>
- 
+
+   

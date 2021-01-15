@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="jumbotron" style="background-color: skyblue;margin-top: 2%"><p style="margin-left: 28%;color: white; font-size: 50px;;">Transaction List</p></div>
+    <div>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Sender Name</th>
+            <th scope="col">Receiver Name</th>
+            <th scope="col">Paid Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let trans of transList">
+            <th scope="row">{{trans.customer?.customerName}}</th>
+            <td>{{trans.receiverName}}</td>
+            <td>{{trans.amount}}</td>
+           
+          </tr>
+          
+        </tbody>
+      </table>
+   
+    
+       </div>
+       </div>
+<button (click)="a()" #deletetrans>asdasdasdasdasdasdasdasdasdfasfhiusfydgjhsdgfjhsdgc</button>
