@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
+import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { CustomerService } from '../customer.service';
 
 @Component({
@@ -13,13 +13,15 @@ export class AddUserComponent implements OnInit {
   constructor(private customerService: CustomerService) { 
 
     this.addCustomer = new FormGroup({
-      customerName : new FormControl(null),
-      age : new FormControl(null),
-      phoneNo : new FormControl(null),
-      email : new FormControl(null),
-      accountNo : new FormControl(null),
-      currentBalance : new FormControl(null),
-      address : new FormControl('123123123sfazsfasdasdasd')
+      customerName : new FormControl(null,Validators.required),
+      age : new FormControl(null,Validators.required),
+      phoneNo : new FormControl(' ',[ Validators.required,
+        Validators.pattern("^[0-9]*$"),
+        Validators.minLength(10), Validators.maxLength(10)]),
+      email : new FormControl(null,Validators.required),
+      accountNo : new FormControl(null,Validators.required),
+      currentBalance : new FormControl(null,Validators.required),
+      address : new FormControl('Jaipur',Validators.required)
     })
   }
 
@@ -30,7 +32,8 @@ export class AddUserComponent implements OnInit {
     if( this.addCustomer.valid == true){
       this.customerService.postCustomer(this.addCustomer.value).subscribe(data=>{
         console.log(data);
-        
+        alert("Customer has been added successfully.")
+        this.addCustomer.reset();
       });
     }
   }

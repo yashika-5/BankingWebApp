@@ -83,7 +83,7 @@ export class TransactionComponent implements OnInit {
         alert('Not Enough balance');
       }
     } else {
-        alert('haggu');
+        alert('Receiver Name not selected.');
       }
     }
 }

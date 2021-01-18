@@ -1,4 +1,9 @@
-.card{
-    flex-direction: row;
-   
+.user mat-icon {
+    font-size: 200px;
+    height: auto;
+    width: auto;
+}
+
+.list-group-item {
+    text-align: left;
 }

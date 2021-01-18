@@ -1,26 +1,34 @@
-<div class="container">
-    
-    <div class="left col-lg-6">
+<div class="row">
+    <div class="bank-img col-md-6 col-sm-12">
         <img src="/assets/bankk.jpg" style="width: 80%;height: 100%;">
     </div>
-    <div class="mid col-lg-3">
-        
-        <a routerLink="/users">
-        <mat-icon style="font-size: 200px;">supervisor_account</mat-icon>
-        <button class="display btn btn-dark"><b>VIEW USERS</b></button>
-        </a>
-        <div class="right col-lg-3">
-            <a routerLink="/transaction-lists"  >
-            <mat-icon style="font-size: 170px;">compare_arrows</mat-icon>
-            <button class="display btn btn-dark"><b>VIEW TRANSACTIONS</b></button>
+    <div class="mid col-md-3" style="text-align:center">
+            <div class="col-sm-12">
+                <a routerLink="/users">
+                    <mat-icon style="font-size: 220px;">supervisor_account</mat-icon>
+                    <button class="btn btn-dark"><b>VIEW USERS</b></button>
+                </a>
+            </div>
+            <div class="col-sm-12">
+                <a routerLink="/transaction-lists">
+                    <mat-icon style="font-size: 170px;">compare_arrows</mat-icon>
+                    <button class="btn btn-dark"><b>VIEW TRANSACTIONS</b></button>
+                </a>
+            </div>
+    </div>
+    <div class="addUser col-md-3 col-sm-12" >
+        <div >
+            <a routerLink="/addcustomer">
+                <mat-icon style="font-size: 80px;">person_add</mat-icon>
+                <button style="display:block" class="btn btn-dark"><b>ADD USER</b></button>
             </a>
         </div>
     </div>
-    <div class="addUser">
+    <!-- <div class="addUser">
         <a routerLink="/addcustomer" style=" display: flex;">
     <span><mat-icon style="font-size: 80px;margin-left: 120%;">person_add</mat-icon></span>
     <span style="margin-top: 63%;"><button class=" btn btn-dark" style="font-weight: lighter;"><b>ADD USER</b></button></span>
         </a>
-    </div>
+    </div> -->
     
 </div>

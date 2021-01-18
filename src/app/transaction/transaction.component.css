@@ -1,6 +1,23 @@
 p.solid{
     border-style: groove;
 }
-form{
-    margin-left: 20%;
+
+.t-money-heading {
+    background-color: skyblue;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+@media only screen and (max-width: 1000px) {
+    .mt-img {
+        display: none;
+    }
+    form {
+        margin: 0;
+    }
+    .t-money-heading {
+        margin: 0;
+        margin-bottom: 20px;
+
+    }
 }

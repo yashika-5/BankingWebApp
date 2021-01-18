@@ -33,7 +33,7 @@ export class TransactionListComponent implements OnInit {
   }
   a(){
     this.transList.forEach((a,i)=>{
-      this.transactionService.delete(a.transId).subscribe(data=>{
+      this.transactionService.delete(44).subscribe(data=>{
         console.log(data);
         
       })

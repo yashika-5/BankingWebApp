@@ -1,28 +1,45 @@
 .container{
     display: flex;
 }
-.left{
-   
+.bank-img{
+   text-align: right;
     margin-top: 5%;
 }
 .mid{
     margin-top: 3%;
 }
 .right{
-    
     margin-top: 9%;
     width: 25%;
 }
 .display{
     text-align: center;
     font-weight: lighter;
-    margin-left: 5%;
+    margin-left: 20%;
     margin-top: 4%;
 }
-.addUser{
-    margin-top: 20%;
-    margin-left: 12%;
-   
-   
+.addUser {
+    margin-top: 17%;
 }
+mat-icon {
+    height: auto;
+    width: auto;
+}
+@media only screen and (max-width: 768px) {
+    .addUser {
+        margin-top: 5%;
+        text-align: center;
+    }
+    .addUser mat-icon {
+        font-size: 130px !important;
+    }
+    .addUser button {
+        margin: auto;
+        width: 50%;
+    }
+    .bank-img {
+        text-align: center;
+    }
+   
 
+}

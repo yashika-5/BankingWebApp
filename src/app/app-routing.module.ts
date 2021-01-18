@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { AddUserComponent } from './add-user/add-user.component';
 import { HomeComponent } from './home/home.component';
 import { TransactionListComponent } from './transaction-list/transaction-list.component';
-import { TransactionSuccessfulComponent } from './transaction-successful/transaction-successful.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { UsersComponent } from './users/users.component';
 
