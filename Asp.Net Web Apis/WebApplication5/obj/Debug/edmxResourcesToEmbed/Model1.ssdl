@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DistBankModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="customers">
+    <Key>
+      <PropertyRef Name="customerId" />
+    </Key>
+    <Property Name="customerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="customerName" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="age" Type="int" Nullable="false" />
+    <Property Name="phoneNo" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="accountNo" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="currentBalance" Type="int" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="60" Nullable="false" />
+  </EntityType>
+  <EntityType Name="transactions">
+    <Key>
+      <PropertyRef Name="transId" />
+    </Key>
+    <Property Name="transId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="customerId" Type="int" Nullable="false" />
+    <Property Name="receiverName" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="accountNo" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="amount" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__transacti__custo__2C3393D0">
+    <End Role="customers" Type="Self.customers" Multiplicity="1" />
+    <End Role="transactions" Type="Self.transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customers">
+        <PropertyRef Name="customerId" />
+      </Principal>
+      <Dependent Role="transactions">
+        <PropertyRef Name="customerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DistBankModelStoreContainer">
+    <EntitySet Name="customers" EntityType="Self.customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="transactions" EntityType="Self.transactions" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__transacti__custo__2C3393D0" Association="Self.FK__transacti__custo__2C3393D0">
+      <End Role="customers" EntitySet="customers" />
+      <End Role="transactions" EntitySet="transactions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

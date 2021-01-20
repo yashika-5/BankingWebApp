@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DistBankModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="customerId" />
+    </Key>
+    <Property Name="customerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="customerName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="age" Type="Int32" Nullable="false" />
+    <Property Name="phoneNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="accountNo" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="currentBalance" Type="Int32" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="transactions" Relationship="Self.FK__transacti__custo__2C3393D0" FromRole="customers" ToRole="transactions" />
+  </EntityType>
+  <EntityType Name="transaction">
+    <Key>
+      <PropertyRef Name="transId" />
+    </Key>
+    <Property Name="transId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="customerId" Type="Int32" Nullable="false" />
+    <Property Name="receiverName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="accountNo" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="amount" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="customer" Relationship="Self.FK__transacti__custo__2C3393D0" FromRole="transactions" ToRole="customers" />
+  </EntityType>
+  <Association Name="FK__transacti__custo__2C3393D0">
+    <End Role="customers" Type="Self.customer" Multiplicity="1" />
+    <End Role="transactions" Type="Self.transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customers">
+        <PropertyRef Name="customerId" />
+      </Principal>
+      <Dependent Role="transactions">
+        <PropertyRef Name="customerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DistBankEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="customers" EntityType="Self.customer" />
+    <EntitySet Name="transactions" EntityType="Self.transaction" />
+    <AssociationSet Name="FK__transacti__custo__2C3393D0" Association="Self.FK__transacti__custo__2C3393D0">
+      <End Role="customers" EntitySet="customers" />
+      <End Role="transactions" EntitySet="transactions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
